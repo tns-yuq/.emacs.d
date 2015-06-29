@@ -1,0 +1,5 @@
+Simple emacs configuration for Python3 and C programming.
+
+Configuration file name and location:
+(1) Either to be "~/.emacs"
+(2) Or "~/.emacs.d/init.el"

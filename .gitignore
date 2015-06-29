@@ -1,0 +1,8 @@
+/auto-save-list
+*.elc
+*~
+*.log
+/ac-comphist.dat
+/elpa
+tutorial/
+\#*
