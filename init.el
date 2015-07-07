@@ -1,9 +1,10 @@
 ;--------------------;
-;;; window frame and size ;;;
+;;; window frame and size, background color ;;;
 ;--------------------;
 ;; Set up frame properties (Window Size)
 (add-to-list 'default-frame-alist '(width . 100)) ; character
 (add-to-list 'default-frame-alist '(height . 52)) ; lines
+(add-to-list 'default-frame-alist '(background-color . "#D6E0EA")) ; background color
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
