@@ -4,7 +4,10 @@
 ;; Set up frame properties (Window Size)
 (add-to-list 'default-frame-alist '(width . 100)) ; character
 (add-to-list 'default-frame-alist '(height . 52)) ; lines
-(add-to-list 'default-frame-alist '(background-color . "#D6E0EA")) ; background color
+;; only change background color if run in graph, do not change for terminal
+(when (display-graphic-p)
+  (add-to-list 'default-frame-alist '(background-color . "#D6E0EA"))) ; background color
+;; (add-to-list 'default-frame-alist '(background-color . "#D6E0EA")) ; background color
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
@@ -81,6 +84,8 @@
 (setq case-fold-search t)
 
 ; display line numbers to the right of the window
+;; (add-to-list 'load-path "~/.emacs.d/linum")
+;; (require 'linum)              ;; needed for an old emacs22 but not for new.
 (global-linum-mode t)
 ; show the current line and column numbers in the stats bar as well
 (line-number-mode t)
