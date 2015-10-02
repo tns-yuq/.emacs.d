@@ -74,8 +74,6 @@
 (add-hook 'prog-mode-hook 'whitespace-mode) ;; apply this only to major programming
 
 
-
-
 ;--------------------;
 ;;; User Interface ;;;
 ;--------------------;
@@ -100,6 +98,28 @@
 (setq highlight-current-line-high-faces nil)
 (setq highlight-current-line-whole-line nil)
 (setq hl-line-face (quote highlight))
+
+;; Highlight symbols
+(add-to-list 'load-path "~/.emacs.d/highlight-symbol")
+(require 'highlight-symbol)
+;;(highlight-symbol-mode 1)   ;; keep the symbol at point highlighted
+;;(highlight-symbol-nav-mode 1) ;; enable key bindings (M-n and M-p) for navigation.
+
+;; ;; use globally
+;; (define-globalized-minor-mode my-global-highlight-symbol-mode highlight-symbol-mode
+;;   (lambda () (highlight-symbol-mode 1) (highlight-symbol-nav-mode 1)))
+;; (my-global-highlight-symbol-mode 1)
+
+;; hook to specific mode (python, c)
+(defun my-highlight-symbol-mode-hook ()
+  (highlight-symbol-mode 1) (highlight-symbol-nav-mode 1))
+(add-hook 'python-mode-hook 'my-highlight-symbol-mode-hook)
+(add-hook 'c-mode-hook 'my-highlight-symbol-mode-hook)
+
+(global-set-key [(control f3)] 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
 
 ;--------------------;
