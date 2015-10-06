@@ -18,6 +18,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; under the python-mode: 'C-c <' shift block 4 spaces left; '>' for right
+
 
 ;; Enable ido
 (require 'ido)
