@@ -125,6 +125,14 @@
 
 
 ;--------------------;
+;;; Remove trailing whitespace
+;--------------------;
+(add-hook 'python-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+(add-hook 'c-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+
+;--------------------;
 ;;; Indentation    ;;;
 ;--------------------;
 ; always use spaces, not tabs, when indenting
