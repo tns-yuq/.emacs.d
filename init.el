@@ -125,14 +125,6 @@
 
 
 ;--------------------;
-;;; Remove trailing whitespace only
-;--------------------;
-(add-hook 'python-mode-hook
-          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-(add-hook 'c-mode-hook
-          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-
-;--------------------;
 ;;; Indentation    ;;;
 ;--------------------;
 ; always use spaces, not tabs, when indenting
@@ -141,6 +133,15 @@
 (setq-default tab-width 4) ;
 (setq c-default-style "linux"
           c-basic-offset 4)
+
+;--------------------;
+;;; Remove trailing whitespace only delete-trailing-whitespace
+;--------------------;
+(add-hook 'python-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+(add-hook 'c-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+
 
 
 ;; Auto Complete
