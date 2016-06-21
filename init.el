@@ -125,12 +125,12 @@
 
 
 ;--------------------;
-;;; Remove trailing whitespace
+;;; Remove trailing whitespace, TABs etc by 'whitespace-cleanup
 ;--------------------;
 (add-hook 'python-mode-hook
-          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+          (lambda () (add-to-list 'write-file-functions 'whitespace-cleanup)))
 (add-hook 'c-mode-hook
-          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+          (lambda () (add-to-list 'write-file-functions 'whitespace-cleanup)))
 
 ;--------------------;
 ;;; Indentation    ;;;
