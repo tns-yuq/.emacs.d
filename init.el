@@ -112,11 +112,12 @@
 ;;   (lambda () (highlight-symbol-mode 1) (highlight-symbol-nav-mode 1)))
 ;; (my-global-highlight-symbol-mode 1)
 
-;; hook to specific mode (python, c)
+;; hook to specific mode (python, c, sh)
 (defun my-highlight-symbol-mode-hook ()
   (highlight-symbol-mode 1) (highlight-symbol-nav-mode 1))
 (add-hook 'python-mode-hook 'my-highlight-symbol-mode-hook)
 (add-hook 'c-mode-hook 'my-highlight-symbol-mode-hook)
+(add-hook 'sh-mode-hook 'my-highlight-symbol-mode-hook)
 
 (global-set-key [(control f3)] 'highlight-symbol)
 (global-set-key [f3] 'highlight-symbol-next)
